@@ -32,6 +32,5 @@ public class ItemsObserved : Observable
         ItemColor.enabled = false;
         
         Notify(this, notif);
-        //print("Collected!");
     }
 }

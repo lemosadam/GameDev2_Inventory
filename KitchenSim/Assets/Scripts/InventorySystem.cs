@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour, Observer
 {
+    List<GameObject> inventoryItems = new List<GameObject>();
+
     public void OnNotify(object obj, NotificationType notificationType)
     {
         if (notificationType == NotificationType.FruitsCollected)
         {
-            Debug.Log("Fruits Obtained!");
+            GameObject fruit = GameObject.Find("Fruit");
+            inventoryItems.Add(fruit);
         }
 
         if (notificationType == NotificationType.IceCollected)
         {
-            Debug.Log("Ice Obtained!");
+            GameObject ice = GameObject.Find("Ice");
+            inventoryItems.Add(ice);
         }
     }
 
@@ -30,6 +34,6 @@ public class InventorySystem : MonoBehaviour, Observer
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
