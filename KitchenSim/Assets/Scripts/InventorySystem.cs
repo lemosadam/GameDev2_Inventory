@@ -1,3 +1,4 @@
+//using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,20 @@ public class InventorySystem : MonoBehaviour, Observer
         {
             GameObject fruit = GameObject.Find("Fruit");
             inventoryItems.Add(fruit);
+            foreach(var item in inventoryItems)
+            {
+                Debug.Log(item.ToString());
+            }
         }
 
         if (notificationType == NotificationType.IceCollected)
         {
             GameObject ice = GameObject.Find("Ice");
             inventoryItems.Add(ice);
+            foreach(var item in inventoryItems)
+            {
+                Debug.Log(item.ToString());
+            }
         }
     }
 
