@@ -21,7 +21,7 @@ public class UIInventoryList : InventorySystem, Observer
         if (notificationType == NotificationType.FruitsCollected)
         {
                 
-                    invUI.text += ToString("Fruit");
+            //invUI.text += ToString("Fruit");
                
         }
 
