@@ -5,9 +5,14 @@ using UnityEngine;
 public class IceObserved : ItemsObserved
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         notif = NotificationType.IceCollected;
+    }
+    
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

@@ -7,10 +7,17 @@ public class Interactives : MonoBehaviour
 {
     [SerializeField] GameObject topFridge;
     [SerializeField] GameObject freezer;
+    protected GameObject[] itemsInFridge;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        itemsInFridge = GameObject.FindGameObjectsWithTag("inFridge");
+        foreach (GameObject item in itemsInFridge)
+        {
+            item.SetActive(false);
+        }
         topFridge.SetActive(false);
         freezer.SetActive(false);
     }
@@ -24,7 +31,11 @@ public class Interactives : MonoBehaviour
     void OnMouseDown()
     {
         if(this.name == "Top") {
-            topFridge.SetActive(true);
+            foreach (GameObject item in itemsInFridge)
+            {
+                item.SetActive(true);
+            }
+        
             Debug.Log("clicked");
         }
 

@@ -5,14 +5,20 @@ using UnityEngine;
 public class FruitsObserved : ItemsObserved
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         notif = NotificationType.FruitsCollected;
+    }
+    
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 

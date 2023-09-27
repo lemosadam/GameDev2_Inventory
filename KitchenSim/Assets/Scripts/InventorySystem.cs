@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour, Observer
 {
-    List<GameObject> inventoryItems = new List<GameObject>();
+    protected List<GameObject> inventoryItems = new List<GameObject>();
 
     public void OnNotify(object obj, NotificationType notificationType)
     {
@@ -31,18 +31,23 @@ public class InventorySystem : MonoBehaviour, Observer
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        // add Achievement System object as observer to all observable objects
         foreach (Observable subject in FindObjectsOfType<Observable>())
         {
             subject.AddObserver(this);
         }
     }
+    
+    void Start()
+    {
+        // add Achievement System object as observer to all observable objects
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
