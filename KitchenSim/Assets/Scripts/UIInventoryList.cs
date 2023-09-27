@@ -30,6 +30,7 @@ public class UIInventoryList : InventorySystem, Observer
             foreach (var item in inventoryItems)
             {
                 invUI.text += item.ToString();
+                Debug.Log(item);
             }
         }
     }
